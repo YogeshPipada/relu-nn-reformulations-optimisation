@@ -28,7 +28,7 @@ def _inputs_for_case(market_data, prosumer_data, pwl_data, time_steps):
 
 
 def solve_one_case(market_data, prosumer_data, pwl_data, time_steps,
-                   time_limit=3600.0, gap_limit=0.0, verbose=False):
+                   time_limit=3600.0, gap_limit=0.01, verbose=False):
     """Solve the exact NLP for a single scenario/case; return a result dict."""
     (market_price, max_flex_profile, cross_temporal_matrix,
      activation_signal, q, r) = _inputs_for_case(market_data, prosumer_data,
@@ -65,7 +65,7 @@ def solve_one_case(market_data, prosumer_data, pwl_data, time_steps,
 
 
 def run_all_scenarios(market_data_dict, prosumer_cluster_data, pwl_data,
-                      season, time_steps, time_limit=3600.0, gap_limit=0.0,
+                      season, time_steps, time_limit=3600.0, gap_limit=0.01,
                       save_dir=None, verbose=False):
     """
     Loop over all scenarios/cases and solve the exact NLP for each.
@@ -115,7 +115,7 @@ def run_all_scenarios(market_data_dict, prosumer_cluster_data, pwl_data,
 #     season=season, time_steps=time_steps,
 #     time_limit=3600.0,   # match the surrogate runs; use 7200.0 for the
 #                          # "double the budget" framing on a subset
-#     gap_limit=0.0,       # 0 => solve to global optimality (or time out)
+#     gap_limit=0.01,      # 1% relative gap, as in the paper
 #     save_dir=nlp_dir,
 # )
 # ----------------------------------------------------------------------------
