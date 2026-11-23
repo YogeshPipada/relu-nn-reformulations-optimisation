@@ -42,7 +42,7 @@ def build_nlp_model(
     r: np.ndarray,                     # shaping param r_t, shape (T,)
     time_steps: int,
     time_limit: float = 3600.0,
-    gap_limit: float = 0.0,            # 0 => solve to global optimality (or time out)
+    gap_limit: float = 0.01,           # 1% relative gap, as in the paper; 0 => solve to global optimality (or time out)
     verbose: bool = True,
 ):
     """Build and return an unsolved SCIP model plus its variable handles."""

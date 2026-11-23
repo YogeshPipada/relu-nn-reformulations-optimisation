@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Solver debug output
+*.lp
+*.mps
+*.ilp
+*.log
+gurobi.lic
+
+# OS / editor
+.DS_Store
+Thumbs.db
+~$*
+.vscode/
+.idea/

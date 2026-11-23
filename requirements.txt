@@ -1,0 +1,23 @@
+# Python 3.11 or 3.12 (the notebooks were last run on 3.11.15 and 3.12.5).
+# Versions are not pinned except where the study depends on them.
+
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+kneed
+requests
+jupyter
+
+# Neural-network training and loading of the saved .keras models
+tensorflow
+keras
+
+# MIP / LP models. A Gurobi licence is required (free academic licences are available).
+# Most stored runs used Gurobi 11.0.3; some earlier stored outputs show 10.0.3.
+gurobipy>=11,<12
+gurobi-machine-learning
+
+# Direct nonlinear (NLP) baseline, solved with SCIP
+pyscipopt
